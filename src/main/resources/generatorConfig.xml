@@ -1,0 +1,36 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"
+        >
+
+<generatorConfiguration>
+    <context id="context1" targetRuntime="MyBatis3">
+        <jdbcConnection
+                connectionURL="jdbc:mariadb://127.0.0.1:3306/database"
+                driverClass="org.mariadb.jdbc.Driver"
+                userId="root" password="1234" />
+
+        <!-- 자동 생성된 domain 모델 경로 지정 -->
+        <javaModelGenerator
+                targetPackage="com.example.mybatispractice.generateddomain"
+                targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- 자동 생성된 sql xml 파일 경로 지정 -->
+        <sqlMapGenerator targetPackage="generate-sql"
+                         targetProject="./src/main/resources">
+<!--            <property name="enableSubPackages" value="true" />-->
+        </sqlMapGenerator>
+
+        <javaClientGenerator
+                type="XMLMAPPER"
+                targetPackage="com.example.mybatispractice.generateddao"
+                targetProject="./src/main/java" />
+
+        <table tableName="category" />
+    </context>
+</generatorConfiguration>
+
+

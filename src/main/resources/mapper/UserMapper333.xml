@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Mapper 인터페이스 방식은 namespace 에 인터페이스 경로를 맞춰야함-->
+<mapper namespace="com.example.mybatispractice.repository.UserMapper">
+
+    <select id="selectUsers" resultType="hashMap">
+        select * from user
+    </select>
+
+</mapper>
